@@ -17,6 +17,10 @@ public class ProfilePage extends BasicPage{
 		this.action = new Actions (driver);
 	}
 	
+	public WebElement getProfile() {
+		return this.driver.findElement(By.xpath("//div[@class='action-profile']/a[2]"));
+	}
+	
 	public WebElement getFirstName(){
 		return driver.findElement(By.name("user_first_name"));
 	}
@@ -69,7 +73,7 @@ public class ProfilePage extends BasicPage{
 	}
 	
 	public WebElement getRemoveBtn() {
-		return driver.findElement(By.xpath("//*[@title='Remove']"));
+		return this.driver.findElement(By.className("remove"));
 	}
 	
 	public void clickOnUploadBtn() {
@@ -88,7 +92,7 @@ public class ProfilePage extends BasicPage{
 		js.executeScript("arguments[0].click();", this.getRemoveBtn());
 	}
 	
-	public void updateProfileInfo(
+	public void setProfileInfo(
 			String firstName,
 			String lastName,
 			String address,
