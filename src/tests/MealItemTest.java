@@ -94,6 +94,7 @@ public class MealItemTest extends BasicTest{
 		cartSummaryPage.cartClearAll();
 		Assert.assertTrue(notificationSystemPage.getMesssageTxt().contains(msgRemoveMeals), msgRemoveMealsErr);
 		
+		workbook.close();
 	}
 	
 	
