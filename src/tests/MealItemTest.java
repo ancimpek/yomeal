@@ -27,7 +27,7 @@ public class MealItemTest extends BasicTest{
 	public String msgRemoveMealsErr = "[ERROR] Meals have not been removed";
 
 
-	@Test
+	@Test(priority = 0)
 	public void addMealToCartTest() throws InterruptedException {
 		
 		driver.get(baseUrl + "meal/lobster-shrimp-chicken-quesadilla-combo");
@@ -49,7 +49,7 @@ public class MealItemTest extends BasicTest{
 		Assert.assertTrue(notificationSystemPage.getMesssageTxt().contains(msgCart), msgCartErr);
 	}
 	
-	@Test
+	@Test(priority = 1)
 	public void addMealToFavorite() throws InterruptedException {
 		
 		driver.get(baseUrl + "meal/lobster-shrimp-chicken-quesadilla-combo");
@@ -69,7 +69,7 @@ public class MealItemTest extends BasicTest{
 		notificationSystemPage.waitUntilMessageDisappears();
 	}
 	
-	@Test
+	@Test(priority = 2)
 	public void clearCartTest() throws InterruptedException, IOException {
 		
 		driver.get(baseUrl + "meals");
