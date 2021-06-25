@@ -26,6 +26,8 @@ public class SearchTest extends BasicTest {
 		FileInputStream fis = new FileInputStream(file);
 		XSSFWorkbook workbook = new XSSFWorkbook(fis);
 		XSSFSheet sheet = workbook.getSheet("Meal Search Results");
+		
+		Thread.sleep(5000);
 
 		for (int i = 1; i < 7; i++) {
 			String url = sheet.getRow(i).getCell(1).getStringCellValue();
